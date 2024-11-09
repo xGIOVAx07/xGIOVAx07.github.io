@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Camiones Académicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> <script src="app.js"></script>
+    <div class="container">
+        <h1>Consulta de Camiones para Estudiantes</h1>
+        
+        <label for="destinationSelect">Selecciona tu destino académico:</label>
+        <select id="destinationSelect" onchange="updateBusOptions()">
+            <option value="">Elige un destino...</option>
+            <option value="conalep169">Conalep 169</option>
+            <option value="uan">Universidad Autónoma de Nayarit (UAN)</option>
+            <option value="tecnologico">Instituto Tecnológico de Tepic</option>
+            <option value="cecyten">CECyTEN</option>
+            <option value="cetis100">CETis 100</option>
+        </select>
+
+        <label for="busSelect">Selecciona tu camión:</label>
+        <select id="busSelect" disabled>
+            <option value="">Primero selecciona un destino...</option>
+        </select>
+
+        <label for="passengerType">Tipo de pasajero:</label>
+        <select id="passengerType" onchange="showCredentialOption()">
+            <option value="">Elige un tipo...</option>
+            <option value="student">Estudiante</option>
+            <option value="child">Niño</option>
+            <option value="senior">Adulto mayor</option>
+            <option value="normal">Normal</option>
+        </select>
+
+        <div id="credentialOption" style="display: none;">
+            <label>¿Tienes credencial?</label>
+            <input type="checkbox" id="hasCredential">
+        </div>
+
+        <button onclick="showArrivalTimeAndFare()">Consultar Horario y Costo</button>
+
+        <div id="result"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
